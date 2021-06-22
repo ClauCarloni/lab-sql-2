@@ -32,6 +32,10 @@
 -- SELECT sec_to_time(round(avg(length))*60) as avg_duration
 -- FROM film;
 
+-- another solution:
+SELECT FLOOR(AVG(length) / 60) AS hours, ROUND(AVG(length) % 60) AS minutes
+FROM sakila.film;
+
 -- 9. How many movies longer than 3 hours?
 -- SELECT count(length) FROM film
 -- WHERE length > (3*60);
